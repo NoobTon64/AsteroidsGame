@@ -23,7 +23,7 @@ public void draw()
                    (float)ball.get(i).getX(), (float)ball.get(i).getY());
     if(d < 20){
       ball.remove(i);
-      i--; // an item was removed, so step back to avoid skipping one
+      i--;
     }
     else{
       ball.get(i).move();
