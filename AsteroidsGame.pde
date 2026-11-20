@@ -14,16 +14,16 @@ public void setup()
 public void draw() 
 {
   background(0);
-  bob.move();
-  bob.show();
   for(int i=0;i<orbs.length;i++)
     orbs[i].show();
+  bob.move();
+  bob.show();
   for(int i=0;i<ball.size();i++){
     float d = dist((float)bob.getX(), (float)bob.getY(),
                    (float)ball.get(i).getX(), (float)ball.get(i).getY());
     if(d < 20){
       ball.remove(i);
-      i--;
+      i--; // an item was removed, so step back to avoid skipping one
     }
     else{
       ball.get(i).move();
